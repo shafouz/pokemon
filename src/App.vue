@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Mobile />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Mobile from './components/Mobile.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Mobile
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+/* color palette */
+:root {
+  --primary-orange: #ff6b18;
+  --secondary-orange: #ffebe0;
+}
+
+body {
+  color: #ff6b18;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
 }
 </style>
