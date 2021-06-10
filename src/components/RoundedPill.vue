@@ -21,14 +21,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 1.75rem;
+  width: 1.75rem;
   border: 1px solid var(--secondary-orange);
   border-radius: 1.25rem;
 }
 
 .media-image {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 0.75rem;
+  width: 0.75rem;
 }
 </style>

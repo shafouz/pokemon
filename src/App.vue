@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <Mobile />
+    <MainPage />
   </div>
 </template>
 
 <script>
-import Mobile from './components/Mobile.vue'
+import MainPage from './components/MainPage.vue'
 
 export default {
   name: 'App',
   components: {
-    Mobile
+    MainPage
   }
 }
 </script>
@@ -23,6 +23,7 @@ export default {
 }
 
 body {
+  margin: 0;
   color: #ff6b18;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.8rem;
