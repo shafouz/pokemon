@@ -20,6 +20,7 @@ export default {
 :root {
   --primary-orange: #ff6b18;
   --secondary-orange: #ffebe0;
+  --yellow-orange: #f3be00;
 }
 
 body {
