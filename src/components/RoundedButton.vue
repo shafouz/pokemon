@@ -24,7 +24,7 @@ export default {
   width: 3rem;
   height: 3rem;
   border-radius: 1.5rem;
-  box-shadow: 0 0.313rem 0.625rem -0.500rem black;
+  box-shadow: 0px 4px 4px 0px #0000001A;
   background-color: white;
 }
 

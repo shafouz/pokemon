@@ -1,5 +1,5 @@
 <template>
-  <button href="#"><strong>CALL TO ACTION</strong></button>
+  <button class="action-button" href="#"><strong>CALL TO ACTION</strong></button>
 </template>
 
 <script>
@@ -15,7 +15,7 @@ button {
   color: white;
   border: none;
   height: 2.5rem;
-  width: calc(100% + 2rem);
+  width: 9.5rem;
   border-radius: 1.25rem;
 }
 </style>

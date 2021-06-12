@@ -1,7 +1,7 @@
 <template>
   <section>
     <aside>
-      <h1>Faça seu teste</h1>
+      <p>Faça seu teste</p>
       <strong>De frontend</strong>
       <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus tortor metus, nec eleifend urna blandit ac. </p>
@@ -34,6 +34,10 @@ section {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 2fr 1fr 1fr 1fr; 
   background-color: var(--yellow-orange);
+  background-image: url("../assets/hero-banner__image.png");
+  background-size: 80%;
+  background-position: 250% 60%;
+  background-repeat: no-repeat;
 }
 
 /* aside */
