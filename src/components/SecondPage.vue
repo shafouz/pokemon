@@ -2,7 +2,7 @@
   <section class="secondary-page">
     <section class="cards">
       <strong>Últimos pokemons</strong>
-      <PokemonCard v-for="item in 8" :key="item" />
+      <PokemonCard v-for="item in 6" :key="item" />
     </section>
     <section class="cards-carousel">
       <strong class="pokemon-name">Pokemon Name</strong>
@@ -34,7 +34,13 @@ export default {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+}
+
+.cards-carousel {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 }
 
 strong {

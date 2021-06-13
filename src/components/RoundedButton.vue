@@ -20,7 +20,6 @@ export default {
 .rounded-button {
   display: flex;
   justify-content: center;
-  margin: 1rem 0.500rem;
   width: 3rem;
   height: 3rem;
   border-radius: 1.5rem;
