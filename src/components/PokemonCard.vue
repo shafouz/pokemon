@@ -22,8 +22,8 @@ export default {
         ". profile-avatar . "
         ". name .";
   place-items: center;
-  width: 9.25rem;
-  height: 11.5rem;
+  width: 48.5%;
+  height: 11.25rem;
   box-shadow: 0px 4px 4px 0px #0000000D;
   border-radius: 6px;
   background-color: #FBFBFB;

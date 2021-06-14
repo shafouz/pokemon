@@ -1,5 +1,6 @@
 <template>
   <div class="carousel">
+    <strong class="pokemon-name">Pokemon Name</strong>
     <PokemonCard />
     <RoundedButton class="arrow-left" image="arrow-left.svg" />
     <RoundedButton class="arrow-right" image="arrow-right.svg" />
@@ -25,35 +26,47 @@ export default {
 
 <style scoped>
 .carousel {
+  width: 100%;
+  height: 25rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   grid-auto-flow: row;
   align-items: center;
   margin: 0 0 1.25rem 0;
 }
 
+.pokemon-name {
+  grid-area: 1 / 1 / 1 / span 5;
+  align-self: end;
+  color: var(--primary-gray);
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
 .pokemon-card {
-  grid-area: 1 / 2 / 4 / 5;
-  width: 19.25rem;
-  height: 16rem;
+  width: 100%;
+  height: 100%;
+  grid-area: 2 / 1 / 5 / 6;
   justify-self: center;
 }
 
 .arrow-left {
-  grid-area: 2 / 1;
+  grid-area: 3 / 1;
   justify-self: start;
   margin-left: -1.5rem;
 }
 
 .arrow-right {
-  grid-area: 2 / 5;
+  grid-area: 3 / 5;
   justify-self: end;
   margin-right: -1.5rem;
 }
 
 .carousel-pills {
-  grid-area: 4 / 3;
+  grid-area: 5 / 3;
   display: flex;
   justify-content: center;
 }

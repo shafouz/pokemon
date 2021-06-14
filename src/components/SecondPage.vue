@@ -1,11 +1,10 @@
 <template>
   <section class="secondary-page">
+    <strong>Últimos pokemons</strong>
     <section class="cards">
-      <strong>Últimos pokemons</strong>
       <PokemonCard v-for="item in 6" :key="item" />
     </section>
     <section class="cards-carousel">
-      <strong class="pokemon-name">Pokemon Name</strong>
       <Carousel />
     </section>
   </section>
@@ -25,8 +24,9 @@ export default {
 </script>
 
 <style scoped>
+/* first section */
 .secondary-page {
-  padding: 0rem 2.25rem;
+  padding: 1.5rem 2.25rem 0 2.25rem;
   background-color: var(--secondary-gray);
 }
 
@@ -34,30 +34,29 @@ export default {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
+  justify-content: space-between;
+  margin: 1rem 0;
 }
 
+.pokemon-card {
+  margin-bottom: 0.5rem;
+}
+/* second section */
 .cards-carousel {
   display: flex;
   flex-flow: column;
-  justify-content: center;
 }
 
+.carousel {
+  align-self: center;
+}
+
+/* both sections */
 strong {
   color: var(--primary-gray);
   font-size: 1.5rem;
   line-height: 1.75rem;
-  margin-bottom: 1rem;
-  margin-top: 2rem;
 }
 
-.pokemon-card {
-  flex-shrink: 0;
-}
-
-.pokemon-card:nth-child(even) {
-  margin-right: 0.75rem;
-  margin-bottom: 0.75rem;
-}
 </style>
 
