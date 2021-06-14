@@ -1,28 +1,28 @@
 <template>
   <main class="main">
-    <PageHeader />
-    <PageBody />
-    <SecondPage />
-    <ThirdPage />
-    <StaticFooter />
+    <FirstPage />
   </main>
 </template>
 
 <script>
+import FirstPage from "./FirstPage.vue"
+/*
 import PageHeader from "./PageHeader.vue"
-import PageBody from "./PageBody.vue"
 import ThirdPage from "./ThirdPage.vue"
 import StaticFooter from "./StaticFooter.vue"
 import SecondPage from "./SecondPage.vue"
+*/
 
 export default {
   name: "MainPage",
   components: {
+    FirstPage,
+    /*
     PageHeader,
     SecondPage,
-    PageBody,
     ThirdPage,
     StaticFooter,
+    */
   }
 }
 </script>

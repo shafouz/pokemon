@@ -27,6 +27,11 @@ export default {
   background-color: white;
 }
 
+.rounded-button:hover {
+  cursor: pointer;
+  background-color: whitesmoke;
+}
+
 img {
   width: min-content;
 }

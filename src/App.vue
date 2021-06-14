@@ -24,6 +24,7 @@ export default {
   --secondary-yellow-orange: #ffd029;
   --primary-gray: #72808E;
   --secondary-gray: #E5E5E5;
+  --primary-blue: #00A8D2;
 }
 
 body {
