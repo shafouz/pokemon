@@ -1,63 +1,49 @@
 <template>
   <div class="first-page-wrapper">
-    <transition name="slide" mode="in-out">
-    <section v-if="change" key="orange">
-      <aside>
-        <p>Faça seu teste</p>
-        <strong>De frontend</strong>
-        <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus tortor metus, nec eleifend urna blandit ac. </p>
-        <ActionButton />
-      </aside>
+    <div class="carousel">
+      <FirstPagePanel id="s1" color="#f3be00" />
+      <FirstPagePanel id="s2" color="#00A8D2" />
       <footer class="buttons">
-        <div @click="changeSlide('left')" class="arrow-wrapper">
-          <RoundedButton  image="arrow-left.svg" />
+        <div @click="prev" class="arrow-wrapper">
+          <RoundedButton image="arrow-left.svg" />
         </div>
-        <div @click="changeSlide('right')" class="arrow-wrapper">
+        <div @click="next" class="arrow-wrapper">
           <RoundedButton image="arrow-right.svg" />
         </div>
       </footer>
-    </section>
-    <section style="backgroundColor: blue" key="blue" v-else>
-      <aside>
-        <p>Faça seu teste</p>
-        <strong>De frontend</strong>
-        <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus tortor metus, nec eleifend urna blandit ac. </p>
-        <ActionButton />
-      </aside>
-      <footer class="buttons">
-        <div @click="changeSlide('left')" class="arrow-wrapper">
-          <RoundedButton  image="arrow-left.svg" />
-        </div>
-        <div @click="changeSlide('right')" class="arrow-wrapper">
-          <RoundedButton image="arrow-right.svg" />
-        </div>
-      </footer>
-    </section>
-    </transition>
+    </div>
   </div>
 </template>
 
 <script>
+import FirstPagePanel from "./FirstPagePanel.vue"
 import RoundedButton from "./RoundedButton.vue"
-import ActionButton from "./ActionButton.vue"
 
 export default {
   name: "PageBody",
   components: {
+    FirstPagePanel,
     RoundedButton,
-    ActionButton
   },
   data() {
     return {
-      change: true
+      currentIndex: 1,
     }
   },
   methods: {
-    changeSlide(direction) {
-      this.change = !this.change
-      console.log(direction)
+    next() {
+      if ( this.currentIndex == 2 ) { return this.currentIndex = 1 }
+      this.currentIndex += 1;
+    },
+    prev() {
+      if ( this.currentIndex == 1 ) { return this.currentIndex = 2 }
+      this.currentIndex -= 1;
+    },
+  },
+  watch: {
+    currentIndex() {
+      if (this.currentIndex == 1) { document.getElementById("s1").scrollIntoView({behavior: "smooth"}) }
+      if (this.currentIndex == 2) { document.getElementById("s2").scrollIntoView({behavior: "smooth"}) }
     }
   }
 }
@@ -65,75 +51,26 @@ export default {
 
 <style scoped>
 /* body */
-.first-page-wrapper {
+.carousel {
   display: flex;
   flex-flow: row;
-}
-
-section {
-  position: absolute;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 2fr 1fr 1fr 1fr; 
-  background-image: url("../assets/hero-banner__image.png");
-  background-color: var(--yellow-orange);
-  background-size: 80%;
-  background-position: 250% 60%;
-  background-repeat: no-repeat;
-}
-
-/* aside */
-aside {
-  display: flex;
-  flex-flow: column;
-  margin-left: 1.5rem;
-  grid-area: 2 / 1 / 4 / 3;
-  color: white;
-}
-
-strong {
-  font-size: 1.33rem;
-}
-
-/* footer */
-footer {
-  display: flex;
-  grid-area: 5 / 2 / 5 / 4;
-  place-self: end center;
+  overflow-x: hidden;
 }
 
 /* arrow buttons */
+.buttons {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  align-self: end;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
 .arrow-wrapper {
   margin: 1rem 0.5rem;
 }
-
-/* transition */
-.slide-enter-active {
-  transition: all 2s;
-}
-
-.slide-leave-active {
-  transition: all 2s;
-  transform: translateX(100%);
-}
-
-.slide-enter, .slide-leave {
-  transform: translateX(100%);
-}
-/*
-.slide-b-enter-active {
-transition: all .3s;
-}
-
-.slide-b-leave-active {
-transition: all;
-transition-delay: .3s;
-}
-
-.slide-b-enter, .slide-b-leave-to
-{
-transform: translateX(-1000px);
-}
- */
 </style>
 

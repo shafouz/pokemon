@@ -1,15 +1,18 @@
 <template>
   <div id="app">
-    <MainPage />
+    <FirstPage v-show="true" />
+    <MainPage v-if="false" />
   </div>
 </template>
 
 <script>
+import FirstPage from './components/FirstPage.vue'
 import MainPage from './components/MainPage.vue'
 
 export default {
   name: 'App',
   components: {
+    FirstPage,
     MainPage
   }
 }

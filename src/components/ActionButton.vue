@@ -15,7 +15,7 @@ button {
   color: white;
   border: none;
   height: 2.5rem;
-  width: 9.5rem;
+  width: 10.5rem;
   border-radius: 1.25rem;
 }
 </style>
