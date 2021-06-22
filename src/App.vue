@@ -1,19 +1,20 @@
 <template>
   <div id="app">
-    <FirstPage v-show="true" />
-    <MainPage v-if="false" />
+    <MainPage v-if="true" />
+    <FirstPagePanel color="#f3be00" v-if="false" />
+    <FirstPagePanel text="Outro Banner" color="#00A8D2" v-if="false" />
   </div>
 </template>
 
 <script>
-import FirstPage from './components/FirstPage.vue'
 import MainPage from './components/MainPage.vue'
+import FirstPagePanel from './components/FirstPagePanel.vue'
 
 export default {
   name: 'App',
   components: {
-    FirstPage,
-    MainPage
+    MainPage,
+    FirstPagePanel
   }
 }
 </script>
@@ -35,4 +36,10 @@ body {
   color: #ff6b18;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+button {
+  background-color: unset;
+  color: unset;
+}
+
 </style>

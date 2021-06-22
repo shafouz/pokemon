@@ -1,7 +1,7 @@
 <template>
-  <div class="rounded-button">
+  <button class="rounded-button">
     <img :src="require(`@/assets/${filename}`)">
-  </div>
+  </button>
 </template>
 
 <script>
@@ -22,6 +22,7 @@ export default {
   justify-content: center;
   width: 3rem;
   height: 3rem;
+  border: none;
   border-radius: 1.5rem;
   box-shadow: 0px 4px 4px 0px #0000001A;
   background-color: white;

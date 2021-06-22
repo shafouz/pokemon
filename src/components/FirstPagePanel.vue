@@ -1,10 +1,12 @@
 <template>
   <section class="first-page-panel" :style="{ backgroundColor: color }">
     <span class="title">Faça seu teste</span>
-    <strong class="subtitle">De frontend</strong>
+    <strong class="subtitle">{{ text }}</strong>
     <p class="text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus tortor metus, nec eleifend urna blandit ac. </p>
     <ActionButton />
+    <div class="bg-wrapper">
+    </div>
   </section>
 </template>
 
@@ -12,7 +14,15 @@
 import ActionButton from "./ActionButton.vue"
 
 export default {
-  props: [ "color" ],
+  props: {
+    text: {
+      default: "De frontend",
+      type: String,
+    },
+    color: {
+      type: String
+    }
+  },
   name: "FirstPagePanel",
   components: {
     ActionButton
@@ -22,9 +32,10 @@ export default {
 
 <style scoped>
 section {
+  position: relative;
   display: grid;
-  grid-template-columns: 1.5rem 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 2rem 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-columns: 1.75rem 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2.70rem 2rem 1fr 1fr 1fr 1fr 1fr 1fr; 
   grid-template-areas: ". . . . ."
   ". title title . ."
   ". subtitle subtitle subtitle ."
@@ -33,10 +44,6 @@ section {
   ". action-button action-button action-button ."
   ". . . . ."
   ". . . . .";
-  background-image: url("../assets/hero-banner__image.png");
-  background-size: 85%;
-  background-position: 300% 70%;
-  background-repeat: no-repeat;
   width: 100%;
   flex-shrink: 0;
   color: white;
@@ -49,6 +56,7 @@ section {
 
 .subtitle {
   grid-area: subtitle;
+  font-weight: 900;
   font-size: 2rem;
 }
 
@@ -58,5 +66,58 @@ section {
 
 .action-button {
   grid-area: action-button;
+}
+
+.bg-wrapper {
+  position: absolute;
+  left: 50%;
+  width: 20rem;
+  height: 20rem;
+  background-image: url("../assets/hero-banner__image.png");
+  background-position: 0 0;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .bg-wrapper {
+    left: unset;
+    right: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .bg-wrapper {
+    z-index: 500;
+    position: absolute;
+    width: 30rem;
+    height: 30rem;
+    top: 12%;
+    left: 50%;
+  }
+
+  section {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 6rem 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2.70rem 2rem 1fr 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-areas: ". . . . ."
+    ". title . . ."
+    ". subtitle . . ."
+    ". text . . ."
+    ". text . . ."
+    ". action-button action-button action-button ."
+    ". . . . ."
+    ". . . . .";
+    width: 100%;
+    flex-shrink: 0;
+    color: white;
+    align-items: center;
+  }
+
+  strong {
+    font-size: 3rem;
+  }
 }
 </style>

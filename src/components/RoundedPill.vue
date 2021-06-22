@@ -1,7 +1,7 @@
 <template>
-  <div class="rounded-pill">
+  <button class="rounded-pill">
     <img class="media-image" :src="require(`@/assets/${filename}`)">
-  </div>
+  </button>
 </template>
 
 <script>
@@ -21,10 +21,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 1.75rem;
-  width: 1.75rem;
+  height: 2rem;
+  width: 2rem;
   border: 1px solid var(--secondary-orange);
-  border-radius: 1.25rem;
+  border-radius: 1.5rem;
+}
+
+.rounded-pill:hover {
+  cursor: pointer;
 }
 
 .media-image {

@@ -1,10 +1,16 @@
 <template>
-  <button class="action-button" href="#"><strong>CALL TO ACTION</strong></button>
+  <button class="action-button" href="#"><strong>{{ text }}</strong></button>
 </template>
 
 <script>
 export default {
   name: "ActionButton",
+  props: {
+    text: {
+      default: "CALL TO ACTION",
+      type: String
+    }
+  }
 }
 </script>
 
@@ -14,8 +20,14 @@ button {
   background-color: var(--primary-orange);
   color: white;
   border: none;
-  height: 2.5rem;
-  width: 10.5rem;
-  border-radius: 1.25rem;
+  height: 2.75rem;
+  width: 45vw;
+  max-width: 15rem;
+  border-radius: 1.375rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #ff6b01;
 }
 </style>

@@ -5,19 +5,19 @@
       <PokemonCard v-for="item in 6" :key="item" />
     </section>
     <section class="cards-carousel">
-      <Carousel />
+      <SecondPageCarousel />
     </section>
   </section>
 </template>
 
 <script>
-import Carousel from "./Carousel.vue"
+import SecondPageCarousel from "./SecondPageCarousel.vue"
 import PokemonCard from "./PokemonCard.vue"
 
 export default {
   name: "SecondPage",
   components: {
-    Carousel,
+    SecondPageCarousel,
     PokemonCard,
   }
 }
@@ -35,20 +35,11 @@ export default {
   flex-flow: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 1rem 0;
+  margin: 1rem 0 2.75rem 0; 
 }
 
 .pokemon-card {
   margin-bottom: 0.5rem;
-}
-/* second section */
-.cards-carousel {
-  display: flex;
-  flex-flow: column;
-}
-
-.carousel {
-  align-self: center;
 }
 
 /* both sections */

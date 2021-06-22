@@ -1,28 +1,30 @@
 <template>
   <main class="main">
     <PageHeader />
-    <FirstPage />
-    <SecondPage />
-    <ThirdPage />
+    <div class="page-body">
+      <FirstPage />
+      <SecondPage />
+      <ThirdPage />
+    </div>
     <StaticFooter />
   </main>
 </template>
 
 <script>
-import FirstPage from "./FirstPage.vue"
 import PageHeader from "./PageHeader.vue"
+import FirstPage from "./FirstPage.vue"
+import SecondPage from "./SecondPage.vue"
 import ThirdPage from "./ThirdPage.vue"
 import StaticFooter from "./StaticFooter.vue"
-import SecondPage from "./SecondPage.vue"
 
 export default {
   name: "MainPage",
   components: {
-       FirstPage,
-       PageHeader,
-       SecondPage,
-       ThirdPage,
-       StaticFooter,
+    PageHeader,
+    FirstPage,
+    SecondPage,
+    ThirdPage,
+    StaticFooter,
   },
 }
 </script>
@@ -31,5 +33,12 @@ export default {
 .main {
   display: flex;
   flex-flow: column;
+}
+
+@media (min-width: 768px) {
+  .page-body {
+    padding: 0 8rem;
+    background-color: #E5E5E5;
+  }
 }
 </style>
