@@ -3,10 +3,12 @@
     <PageHeader />
     <div class="page-body">
       <FirstPage />
+      <div class="q">
       <SecondPage />
       <ThirdPage />
+      </div>
     </div>
-    <StaticFooter />
+    <StaticFooter v-if="false" />
   </main>
 </template>
 
@@ -35,10 +37,17 @@ export default {
   flex-flow: column;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .page-body {
+    display: flex;
+    flex-flow: column;
     padding: 0 8rem;
     background-color: #E5E5E5;
+  }
+
+  .q {
+    display: flex;
+    flex-flow: row;
   }
 }
 </style>

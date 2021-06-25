@@ -2,7 +2,7 @@
   <section class="secondary-page">
     <strong>Últimos pokemons</strong>
     <section class="cards">
-      <PokemonCard v-for="item in 6" :key="item" />
+      <PokemonCard width="15%" v-for="item in 6" :key="item" />
     </section>
     <section class="cards-carousel">
       <SecondPageCarousel />
@@ -35,7 +35,7 @@ export default {
   flex-flow: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 1rem 0 2.75rem 0; 
+  margin: 1rem 0 3rem 0; 
 }
 
 .pokemon-card {
@@ -49,5 +49,17 @@ strong {
   line-height: 1.75rem;
 }
 
-</style>
+@media (min-width: 992px) {
+  .secondary-page {
+    padding: unset;
+  }
 
+  .cards-carousel {
+    width: 50%;
+  }
+
+  .card-wrapper {
+    width: 15%;
+  }
+}
+</style>

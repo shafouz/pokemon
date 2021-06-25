@@ -44,5 +44,12 @@ p {
 .action-button {
   margin: auto;
 }
+
+@media (min-width: 992px) {
+  .third-page {
+    height: 100%;
+    width: 50%;
+  }
+}
 </style>
 

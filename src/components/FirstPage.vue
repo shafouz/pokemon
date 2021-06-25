@@ -55,7 +55,7 @@ export default {
 .carousel {
   display: flex;
   flex-flow: row;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .arrow-wrapper {
@@ -64,31 +64,29 @@ export default {
 
 @media (min-width: 992px) {
   .first-page-wrapper {
+    margin-top: 2rem;
     position: relative;
   }
 
   .arrow-wrapper {
     position: absolute;
     margin: unset;
-    z-index: 5;
-  }
-
-  .carousel {
+    z-index: 999;
   }
 
   .left {
     position: absolute;
-    z-index: 4;
+    z-index: 998;
     left: 0;
-    top: 50%;
+    top: 37%;
     margin-left: -1.5rem;
   }
 
   .right {
     position: absolute;
-    z-index: 4;
+    z-index: 998;
     right: 0;
-    top: 50%;
+    top: 37%;
     margin-right: -1.5rem;
   }
 }

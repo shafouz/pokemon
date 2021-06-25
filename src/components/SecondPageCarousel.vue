@@ -1,8 +1,7 @@
 <template>
   <div class="carousel">
-    <strong class="pokemon-name">Pokemon Name</strong>
     <div class="cards-wrapper">
-      <PokemonCard v-for="item in 4" :key="item" class="card" :id="`card-${item}`" />
+      <PokemonCard width="48.5%" height="22vw" name="pokemon" v-for="item in 4" :key="item"  :id="`card-${item}`"/>
     </div>
     <div @click="prev" class="arrow-wrapper">
       <RoundedButton class="arrow-left" image="arrow-left.svg" />
@@ -85,25 +84,6 @@ export default {
   border-radius: 6px;
 }
 
-.card {
-  margin: 0 0.5rem;
-}
-
-.pokemon-name {
-  margin: 1rem 0 1rem 0.5rem;
-  align-self: start;
-  color: var(--primary-gray);
-  font-size: 1.5rem;
-  line-height: 1.75rem;
-}
-
-.pokemon-card {
-  flex-shrink: 0;
-  width: 100%;
-  height: 100%;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
-}
-
 .arrow-left {
   position: absolute;
   margin-left: -1.5rem;
@@ -133,5 +113,30 @@ export default {
 
 .pill.active {
   background-color: var(--primary-orange);
+}
+
+@media (min-width: 992px) {
+  .carousel {
+    position: unset;
+  }
+
+  .cards-wrapper {
+    all: unset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .carousel-pills {
+    display: none;
+  }
+
+  .arrow-wrapper {
+    display: none;
+  }
+
+  .cards-wrapper > .pokemon-card {
+    margin-top: 5rem;
+  }
 }
 </style>

@@ -50,6 +50,10 @@ section {
   align-items: center;
 }
 
+#s2 {
+  z-index: 997;
+}
+
 .title {
   grid-area: title;
 }
@@ -88,17 +92,15 @@ section {
 
 @media (min-width: 992px) {
   .bg-wrapper {
-    z-index: 500;
     position: absolute;
+    z-index: 500;
     width: 30rem;
     height: 30rem;
-    top: 12%;
+    top: 15vh;
     left: 50%;
   }
 
   section {
-    position: relative;
-    z-index: 2;
     display: grid;
     grid-template-columns: 6rem 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 2.70rem 2rem 1fr 1fr 1fr 1fr 1fr 1fr; 
@@ -114,6 +116,7 @@ section {
     flex-shrink: 0;
     color: white;
     align-items: center;
+    margin-bottom: 15vh;
   }
 
   strong {
